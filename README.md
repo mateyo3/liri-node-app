@@ -3,9 +3,10 @@
 ## Live link
 https://mateyo3.github.io/liri-node-app
 
-## API Keys Powered by 
+## NPM 
 1. Twitter
 2. Spotify
+3. OMDB
 
 ## Built With
 Node.js, Javascript, JSON
