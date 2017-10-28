@@ -1,5 +1,4 @@
-```JavaScript
-console.log('this is loaded');
+console.log('twitter-this is loaded');
 
 var twitterKeys = {
   consumer_key: 'W7OzF0s1FjZnYaFuxPSxfgdrs',
@@ -9,4 +8,3 @@ var twitterKeys = {
 }
 
 module.exports = twitterKeys;
-```
