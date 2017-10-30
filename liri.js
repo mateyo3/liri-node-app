@@ -67,6 +67,23 @@ if (process.argv[2] === "movie-this") {
 
 if (process.argv[2] === "do-what-it-says") {
 	console.log("command input is: " + command);
+
+	var nodeArgs = process.argv;
+	var whatItSaysName = "";
+
+	for (var i = 3; i < nodeArgs.length; i++) {
+	  if (i > 3 && i < nodeArgs.length) {
+	    whatItSaysName = whatItSaysName + "+" + nodeArgs[i];
+	  }
+	  else {
+	    whatItSaysName += nodeArgs[i];
+	  }
+	}
+
+//PSUEDO CODE:
+// Take the text inside of random.txt and then use it to call one of LIRI's commands.
+
+
 } //end: do what I says if statement 
 
 
@@ -81,12 +98,17 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
     console.log(tweets);
   }
 });
+
+//PSUEDO CODE:
+// find specific user's 20 recent tweets
+// Output data to console
+
 }
 
 
 function movie(){
 	var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=40e9cece";
-	console.log(queryUrl);
+	// console.log(queryUrl);
 
 	request(queryUrl, function(error, response, body) {
 

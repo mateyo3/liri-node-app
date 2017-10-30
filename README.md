@@ -1,7 +1,9 @@
 # liri-node-app
 
 ## Successes
-1. User is able to input multiple word movies titles to output data for that movie
+1. All 3 NPM packages saved as dependencies
+
+2. User is able to input multiple word movies titles to output data for that movie
 
 ## Incomplete code
 1. Twitter does not call last 20 tweets
