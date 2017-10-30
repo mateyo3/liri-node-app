@@ -55,7 +55,12 @@ if (process.argv[2] === "movie-this") {
 	    movieName += nodeArgs[i];
 	  }
 	}
+
 	movie();
+
+	// if (nodeArgs[3] = "NULL") {
+	// 	mrNobody();
+	// }
 } //end: movie if statement 
 
 
@@ -80,7 +85,6 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
 
 
 function movie(){
-	// Then run a request to the OMDB API with the movie specified
 	var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=40e9cece";
 	console.log(queryUrl);
 
@@ -89,8 +93,6 @@ function movie(){
 	  // If the request is successful
 	  if (!error && response.statusCode === 200) {
 
-	    // Parse the body of the site and recover just the imdbRating
-	    // (Note: The syntax below for parsing isn't obvious. Just spend a few moments dissecting it).
 	    console.log(
 			"Title: " + JSON.parse(body).Year + 
 			"\nRelease Year: " + JSON.parse(body).Released + 
@@ -101,6 +103,34 @@ function movie(){
 			"\nPlot: " + JSON.parse(body).Plot + 
 			"\nActors: " + JSON.parse(body).Actors 
 	    	);
+	  } else {
+	  	console.log()
+	  }
+	});
+}
+
+function mrNobody() {
+	var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=40e9cece";
+	movieName = "Mr.+Nobody";
+	console.log(queryUrl);
+
+	request(queryUrl, function(error, response, body) {
+
+	  // If the request is successful
+	  if (!error && response.statusCode === 200) {
+
+	    console.log(
+			"Title: " + JSON.parse(body).Year + 
+			"\nRelease Year: " + JSON.parse(body).Released + 
+			"\nIMDB Rating: " + JSON.parse(body).imdbRating + 
+			"\nRotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Value + 
+			"\nCountry: " + JSON.parse(body).Country + 
+			"\nLanguage: " + JSON.parse(body).Language + 
+			"\nPlot: " + JSON.parse(body).Plot + 
+			"\nActors: " + JSON.parse(body).Actors 
+	    	);
+	  } else {
+	  	console.log()
 	  }
 	});
 }

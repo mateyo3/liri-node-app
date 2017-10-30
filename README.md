@@ -1,12 +1,17 @@
 # liri-node-app
 
-## Live link
-https://mateyo3.github.io/liri-node-app
+## Successes
+1. User is able to input multiple word movies titles to output data for that movie
 
-## NPM 
-1. Twitter
-2. Spotify
-3. OMDB
+## Incomplete code
+1. Twitter does not call last 20 tweets
+2. Empty process.argv[3] does not call Mr. Nobody output data
+3. Spotify does not use text inside of random.txt and then use it to call one of LIRI's commands
+
+## NPM installs and API keys used 
+1. Twitter: https://www.npmjs.com/package/twitter
+2. Spotify: https://www.npmjs.com/package/node-spotify-api
+3. OMDB: https://www.npmjs.com/package/omdb
 
 ## Built With
 Node.js, Javascript, JSON
